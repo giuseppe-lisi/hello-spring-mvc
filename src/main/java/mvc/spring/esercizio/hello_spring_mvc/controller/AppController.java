@@ -35,5 +35,15 @@ public class AppController {
 
         return "dice";
     }
+
+    @GetMapping("/converter")
+    public String convert(Model model, @RequestParam float mt) {
+        float ft = mt * 3.28f;
+
+        model.addAttribute("ft", ft);
+        model.addAttribute("mt", mt);
+            
+        return "converter";
+    }
     
 }
